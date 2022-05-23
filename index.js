@@ -1,59 +1,71 @@
-let books = [{title: "Title", Author: "Author"}];
+let books = [];
 
-const collection = document.getElementById("bookss");
+const collection = document.getElementById('bookss');
 
-books.forEach((books) => {
-const div = document.createElement('div');
-div.className = 'main-container';
-div.innerHTML = `<div>
-<h1>
-    Book Keeping Website
-</h1>
-</div>
+function createForm() {
+  const div = document.createElement('div');
+  div.className = 'main-container';
+  div.innerHTML = `
 <div>
 <div id = "dynamic">
 </div>
 </div>
 <div>
-  <form>
+  <form id = "bookForm">
     <input type="text" name = "title" id="title" required placeholder="Title"><br><br>
     <input type="text" name = "author" id="tuthor" required placeholder="Author"><br><br>
-    <button onclick="addItem()" type= "button">add</button>
+    <button id="addItem" type= "button">add</button>
   </form>
 </div>
 `;
-collection.appendChild(div);
-});
+  collection.appendChild(div);
+}
+createForm();
 
-function addItem(){
-var div = document.getElementById("dynamic");
-var title = document.getElementById("title");
-var author = document.getElementById("tuthor");
-var para = document.createElement("p");
-var para2 = document.createElement("p");
-var button1 = document.createElement("button");
-var buttonText = button1.innerHTML = "Remove";
-var hrTeg = document.createElement("hr");
-para.setAttribute('id',title.value);
-para2.setAttribute('id',author.value);
-
-para.appendChild(document.createTextNode(title.value));'\n'
-para2.appendChild(document.createTextNode(author.value));
-div.append(para);
-div.append(para2);
-div.append(button1);
-div.append(hrTeg);
+function dataStore() {
+  localStorage.setItem('bookData', JSON.stringify(books));
 }
 
+function deleteBook(event) {
+  const bookIndex = event.target.id;
+  books.splice(bookIndex, 1);
+  dataStore();
+  displayBooks();
+}
 
-const inputFields = document.querySelectorAll('input');
-inputFields.forEach((input) => {
-  input.addEventListener('change', (event) => {
-    let formData = JSON.parse(localStorage.getItem('formData'));
-    if (!formData) {
-      formData = { title: '', author: ''};
-    }
-    formData[event.target.name] = event.target.value;
-    localStorage.setItem('formData', JSON.stringify(formData));
+function displayBooks() {
+  let listOfBooks = '';
+  books.forEach((book, index) => {
+    listOfBooks += ` <div class="book">
+    <div>${book.title}</div>
+    <div>${book.author}</div>
+    <div>
+        <button class='btn-delete' id=${index}>Remove</button>
+    </div>
+    <hr/>        
+  </div>`;
   });
-});
+  const div = document.getElementById('dynamic');
+  div.innerHTML = listOfBooks;
+  if (books.length > 0) {
+    const deleteButtons = document.querySelectorAll('.btn-delete');
+    deleteButtons.forEach((button) => { button.addEventListener('click', deleteBook); });
+  }
+}
+function addItem() {
+  const title = document.getElementById('title').value;
+  const author = document.getElementById('tuthor').value;
+  const form = document.forms[0];
+
+  books.push({ title, author });
+  dataStore();
+  displayBooks();
+  form.reset();
+}
+document.getElementById('addItem').addEventListener('click', addItem);
+window.onload = () => {
+  books = JSON.parse(localStorage.getItem('bookData'));
+  if (books) {
+    displayBooks();
+  }
+};
