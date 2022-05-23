@@ -16,8 +16,8 @@ div.innerHTML = `<div>
 </div>
 <div>
   <form>
-    <input type="text" id="title" required placeholder="Title"><br><br>
-    <input type="text" id="tuthor" required placeholder="Author"><br><br>
+    <input type="text" name = "title" id="title" required placeholder="Title"><br><br>
+    <input type="text" name = "author" id="tuthor" required placeholder="Author"><br><br>
     <button onclick="addItem()" type= "button">add</button>
   </form>
 </div>
@@ -46,9 +46,14 @@ div.append(hrTeg);
 }
 
 
-// function removeItem(){
-//     var ul = document.getElementById("dynamic");
-//     var title = document.getElementById("title");
-//    var li = document.createTextNode(title.value);
-//    ul.removeItem(li);
-// }
+const inputFields = document.querySelectorAll('input');
+inputFields.forEach((input) => {
+  input.addEventListener('change', (event) => {
+    let formData = JSON.parse(localStorage.getItem('formData'));
+    if (!formData) {
+      formData = { title: '', author: ''};
+    }
+    formData[event.target.name] = event.target.value;
+    localStorage.setItem('formData', JSON.stringify(formData));
+  });
+});
