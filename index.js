@@ -1,7 +1,7 @@
-let books = [{title: "Book1", Author: "Safar"}];
+let books = [{title: "Title", Author: "Author"}];
 
 const collection = document.getElementById("bookss");
-books.forEach((books, index) => {
+books.forEach((books) => {
 const div = document.createElement('div');
 div.className = 'main-container';
 div.innerHTML = `<div>
@@ -10,16 +10,8 @@ div.innerHTML = `<div>
 </h1>
 </div>
 <div>
-<p>${books.title}</p>
-<p>${books.Author}</p>
-<button onclick="removeItem()" type= "button">Remove</button>
-<ul id = "dynamic">
-<li></li>
-<li>
-<ol></ol>
-</li>
-</ul>
-<hr>
+<div id = "dynamic">
+</div>
 </div>
 <div>
   <form>
@@ -31,21 +23,31 @@ div.innerHTML = `<div>
 `;
 collection.appendChild(div);
 });
+
 function addItem(){
-var ul = document.getElementById("dynamic");
+var div = document.getElementById("dynamic");
 var title = document.getElementById("title");
 var author = document.getElementById("tuthor");
-var li = document.createElement("li");
-li.setAttribute('id',title.value);
-li.setAttribute('id',author.value);
+var para = document.createElement("p");
+var para2 = document.createElement("p");
+var button1 = document.createElement("button");
+var buttonText = button1.innerHTML = "Remove";
+var hrTeg = document.createElement("hr");
+para.setAttribute('id',title.value);
+para2.setAttribute('id',author.value);
 
-li.appendChild(document.createTextNode(title.value));'\n'
-li.appendChild(document.createTextNode(author.value));
-ul.append(li);
+para.appendChild(document.createTextNode(title.value));'\n'
+para2.appendChild(document.createTextNode(author.value));
+div.append(para);
+div.append(para2);
+div.append(button1);
+div.append(hrTeg);
 }
-function removeItem(){
-    var ul = document.getElementById("dynamic");
-    var title = document.getElementById("title");
-   var li = document.createTextNode(title.value);
-   ul.removeItem(li);
-}
+
+
+// function removeItem(){
+//     var ul = document.getElementById("dynamic");
+//     var title = document.getElementById("title");
+//    var li = document.createTextNode(title.value);
+//    ul.removeItem(li);
+// }
