@@ -16,7 +16,7 @@ div.innerHTML = `<div>
 <hr>
 </div>
 <div>
-<form>
+  <form>
     <input type="text" id="title" required placeholder="Title"><br><br>
     <input type="text" id="tuthor" required placeholder="Author"><br><br>
     <button onclick="addItem()" type= "button">add</button>
