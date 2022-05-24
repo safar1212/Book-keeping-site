@@ -19,7 +19,9 @@
 
 #### Cloning the project
 
-git clone [https://github.com/sentayhu19/portofolio-setup-nd-mobile-version-skeleton](https://github.com/safar1212/Book-keeping-site) <Your-Build-Directory>
+
+
+git clone [https://github.com/safar1212/Book-keeping-site](https://github.com/safar1212/Book-keeping-site) <Your-Build-Directory>
 
 ## Getting packages and debuging with Stylelint
 
