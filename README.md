@@ -1,6 +1,6 @@
 # Book-keeping-site
 
-> This project is about building portofolio page mobile version using html and css
+> This project is about building a book keeping website. Where folks can store their favortie book names. And can also delete those, whenever, needed.
 
 ## Live demo
 
@@ -43,10 +43,15 @@ npx hint .
 
 ## Authors
 
-👤 **Sentayhu Berhanu**
+👤 **Safar Ali**
 
-- GitHub: [@sentayhu19](https://github.com/sentayhu19)
-- LinkedIn: [sentayhu-berhanu](https://www.linkedin.com/in/sentayhu-berhanu-6376579a/)
+- GitHub: [@Safar Ali](https://github.com/safar1212)
+- LinkedIn: [Safar Ali](https://www.linkedin.com/in/safar-ali999/)
+
+👤 **Divine Charlotte**
+
+- GitHub: [@Divine](https://github.com/divinecharlotte)
+- LinkedIn: [Divine Charlotte](https://www.linkedin.com/in/safar-ali999/)
 
 ## 🤝 Contributing
 
