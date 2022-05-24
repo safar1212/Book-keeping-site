@@ -64,7 +64,7 @@ function addItem() {
 }
 document.getElementById('addItem').addEventListener('click', addItem);
 window.onload = () => {
-  books = JSON.parse(localStorage.getItem('bookData'));
+  books = JSON.parse(localStorage.getItem('bookData')) || [];
   if (books) {
     displayBooks();
   }
