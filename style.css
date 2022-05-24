@@ -1,3 +1,18 @@
 body {
   background-color: white;
 }
+
+#dynamic{
+  border: red 0.5px solid;
+}
+.table{
+  display: flex;
+ 
+}
+.delete{
+  margin-left: 260px;
+}
+.division{
+  border: red solid;
+  width: auto;
+}

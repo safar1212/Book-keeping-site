@@ -1,34 +1,37 @@
 // book class: represent a book
 
-//const { list } = require("postcss");
+// const { list } = require("postcss");
 
 // const { List } = require("css-tree");
 
 class book {
   constructor() {
-    this.books = JSON.parse(localStorage.getItem('bookstore')) || [];
+    this.books = JSON.parse(localStorage.getItem('Bookstore')) || [];
   }
 
-  addBook(title, author){
-    this.books.push({title: title, author: author});
+  addBook(title, author) {
+    this.books.push({ title, author });
     this.storeBookData();
     this.addBookToList();
-  } 
+  }
 
   addBookToList() {
-    const table = document.querySelector("#book-list");
+    const table = document.querySelector('#book-list');
     let listOfBooks = '';
     this.books.forEach((book, index) => {
       listOfBooks += `
     <tr>
-        <td>${book.title} by ${book.author}</td>
-        <td><button class="delete" type="button" id=${index}>Remove</button></td>
-    </tr>`;
+     <td>${book.title} by ${book.author}</td>
+    <td><button class="delete" type="button" id=${index}>Remove</button></td>
+       
+        
+    </tr>
+    <div><hr></div>`;
     });
     table.innerHTML = listOfBooks;
-    if(this.books.length > 0) {
+    if (this.books.length > 0) {
       const deleteButtons = document.querySelectorAll('.delete');
-      deleteButtons.forEach((btn) => { btn.addEventListener('click', this.deleteBook.bind(this))});
+      deleteButtons.forEach((btn) => { btn.addEventListener('click', this.deleteBook.bind(this)); });
     }
   }
 
@@ -36,26 +39,24 @@ class book {
     const bookId = click.target.id;
     this.books.splice(bookId, 1);
     this.storeBookData();
-    this.addBookToList(); 
+    this.addBookToList();
   }
 
-  storeBookData(){
+  storeBookData() {
     const bookdata = JSON.stringify(this.books);
-    localStorage.setItem('bookstore', bookdata);
+    localStorage.setItem('Bookstore', bookdata);
   }
 }
 
-const bookstore = new book();
-
-
+const Bookstore = new book();
 
 // Ul class: handles UI task
 
 class userInterface {
   static displayBooks() {
     const storedBooks = [
-      { title: "Book 1", author: "one" },
-      { title: "Book 2", author: "two" }
+      { title: 'Book 1', author: 'one' },
+      { title: 'Book 2', author: 'two' },
     ];
 
     // const books = displayBooks;
@@ -70,38 +71,20 @@ class userInterface {
 
 // event: display books
 
-window.onload = () => { bookstore.addBookToList(); }
+window.onload = () => { Bookstore.addBookToList(); };
 
 // events: add books
 
 // const addBook = document.querySelector("#book-form");
 
-document.querySelector("#book-form").addEventListener('submit', (e) => {
+document.querySelector('#book-form').addEventListener('submit', (e) => {
   e.preventDefault();
-  const title = document.querySelector("#title").value;
-  const author = document.querySelector("#tuthor").value;
-  bookstore.addBook(title, author);
-})
+  const title = document.querySelector('#title').value;
+  const author = document.querySelector('#tuthor').value;
+  Bookstore.addBook(title, author);
+});
 
 // events: remove books
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // let books = [];
 
