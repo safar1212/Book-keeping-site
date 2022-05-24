@@ -1,13 +1,53 @@
 // book class: represent a book
 
+//const { list } = require("postcss");
+
 // const { List } = require("css-tree");
 
 class book {
-  constructor(title, author) {
-    this.title = title;
-    this.author = author;
+  constructor() {
+    this.books = JSON.parse(localStorage.getItem('bookstore')) || [];
+  }
+
+  addBook(title, author){
+    this.books.push({title: title, author: author});
+    this.storeBookData();
+    this.addBookToList();
+  } 
+
+  addBookToList() {
+    const table = document.querySelector("#book-list");
+    let listOfBooks = '';
+    this.books.forEach((book, index) => {
+      listOfBooks += `
+    <tr>
+        <td>${book.title} by ${book.author}</td>
+        <td><button class="delete" type="button" id=${index}>Remove</button></td>
+    </tr>`;
+    });
+    table.innerHTML = listOfBooks;
+    if(this.books.length > 0) {
+      const deleteButtons = document.querySelectorAll('.delete');
+      deleteButtons.forEach((btn) => { btn.addEventListener('click', this.deleteBook.bind(this))});
+    }
+  }
+
+  deleteBook(click) {
+    const bookId = click.target.id;
+    this.books.splice(bookId, 1);
+    this.storeBookData();
+    this.addBookToList(); 
+  }
+
+  storeBookData(){
+    const bookdata = JSON.stringify(this.books);
+    localStorage.setItem('bookstore', bookdata);
   }
 }
+
+const bookstore = new book();
+
+
 
 // Ul class: handles UI task
 
@@ -18,28 +58,11 @@ class userInterface {
       { title: "Book 2", author: "two" }
     ];
 
-    const books = displayBooks;
+    // const books = displayBooks;
 
-    books.forEach((book) => userInterface.addBookToList(book));
-  }
+    // books.forEach((book) => userInterface.addBookToList(book));
 
-  static addBookToList(book) {
-    const table = document.querySelector("#book-list");
-
-    const row = document.createElement("thead");
-
-    row.innerHTML = `
-    <tr>
-        <th>"${book.title}"</th>
-        <th>by</th>
-        <th>${book.author}</th>
-    </tr>
-    <tr>
-        <th><button type="button" id="delete">Remove</button></th>
-    </tr>
-    `;
-
-    table.appendChild(row);
+    storedBooks.forEach((book) => userInterface.addBookToList(book));
   }
 }
 
@@ -47,9 +70,18 @@ class userInterface {
 
 // event: display books
 
-document.addEventListener('DOMContentLoaded', userInterface.displayBooks);
+window.onload = () => { bookstore.addBookToList(); }
 
 // events: add books
+
+// const addBook = document.querySelector("#book-form");
+
+document.querySelector("#book-form").addEventListener('submit', (e) => {
+  e.preventDefault();
+  const title = document.querySelector("#title").value;
+  const author = document.querySelector("#tuthor").value;
+  bookstore.addBook(title, author);
+})
 
 // events: remove books
 
