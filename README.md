@@ -2,9 +2,8 @@
 
 > This project is about building a book keeping website. Where folks can store their favortie book names. And can also delete those, whenever, needed.
 
-## Live demo
+## Live demo If any
 
-[Live Demo Link](https://sentayhu19.github.io/Portfolio-setup-and-mobile-version-skeleton/)
 
 ## Built With
 
@@ -20,7 +19,7 @@
 
 #### Cloning the project
 
-git clone https://github.com/sentayhu19/portofolio-setup-nd-mobile-version-skeleton <Your-Build-Directory>
+git clone [https://github.com/sentayhu19/portofolio-setup-nd-mobile-version-skeleton](https://github.com/safar1212/Book-keeping-site) <Your-Build-Directory>
 
 ## Getting packages and debuging with Stylelint
 
