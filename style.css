@@ -1,9 +1,4 @@
-/* body {
-  background-color: white;
-} */
-
 #bookss {
-  /* border: 2px red solid; */
   display: flex;
   width: 70%;
   align-items: center;
@@ -24,9 +19,6 @@ hr {
 }
 
 .table {
-  /* display: flex; */
-
-  /* border: 2px red solid; */
   width: 100%;
 }
 
@@ -60,14 +52,14 @@ form button {
   font-size: 25px;
 }
 
-section h1{
+section h1 {
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
 }
 
-nav #navigation{
+nav #navigation {
   border: 3px black solid;
   display: flex;
   justify-content: space-between;
@@ -79,41 +71,39 @@ nav #navigation{
   margin-bottom: 150px;
 }
 
-nav ul{
+nav ul {
   display: flex;
   gap: 30px;
   align-items: center;
-    justify-content: center;
-    align-content: center;
-  
+  justify-content: center;
+  align-content: center;
 }
 
-nav ul li a{
+nav ul li a {
   text-decoration: none;
   color: black;
 }
 
-nav ul li{
+nav ul li {
   list-style-type: none;
   font-size: 20px;
 }
 
-nav ul hr{
+nav ul hr {
   height: 30px;
 }
 
-nav ul li a:hover{
+nav ul li a:hover {
   color: blue;
 }
 
-#show-contact{
-  display: flex;
+#show-contact {
   align-items: center;
   flex-direction: column;
   display: none;
 }
 
-footer{
+footer {
   border: 3px black solid;
   display: flex;
   align-items: center;
@@ -122,14 +112,14 @@ footer{
   padding-left: 3%;
   height: 50px;
   width: 96%;
-  margin: 0px auto;
+  margin: 0 auto;
   position: fixed;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
-#book-form{
+#book-form {
   font-size: 25px;
   display: none;
   align-items: center;
@@ -144,15 +134,13 @@ footer{
   border: 2px black solid;
 }
 
-section #show-book{
+section #show-book {
   justify-content: center;
   align-items: center;
   flex-direction: column;
   align-content: center;
-  /* display: none; */
 }
 
-.remove-page{
+.remove-page {
   display: flex;
 }
-
