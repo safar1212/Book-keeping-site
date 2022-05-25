@@ -107,6 +107,7 @@ nav ul li a:hover{
   display: flex;
   align-items: center;
   flex-direction: column;
+  display: none;
 }
 
 footer{
@@ -117,12 +118,21 @@ footer{
   gap: 43px;
   padding-left: 3%;
   height: 50px;
+  width: 96%;
+  margin: 0px auto;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
 }
 
 #book-form{
   border: 2px green solid;
+  display: none;
 }
 
 section .books-section{
   border: 2px yellow solid;
+  display: none;
 }
+

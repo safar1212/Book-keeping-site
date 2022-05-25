@@ -51,3 +51,16 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
   title.value = '';
   author.value = '';
 });
+
+
+const displayListOfBooks = () => {
+   
+}
+
+const displayBookForm = () => {
+
+}
+
+const displayContactPage = () => {
+
+}
