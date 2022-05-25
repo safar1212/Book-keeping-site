@@ -2,17 +2,19 @@ body {
   background-color: white;
 }
 
-#dynamic{
+#dynamic {
   border: red 0.5px solid;
 }
-.table{
+
+.table {
   display: flex;
- 
 }
-.delete{
+
+.delete {
   margin-left: 260px;
 }
-.division{
+
+.division {
   border: red solid;
   width: auto;
 }
