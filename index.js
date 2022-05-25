@@ -14,13 +14,10 @@ class Book {
     let listOfBooks = '';
     this.books.forEach((book, index) => {
       listOfBooks += `
-    <tr>
-     <td>${book.title} by ${book.author}</td>
-    <td><button class="delete" type="button" id=${index}>Remove</button></td>
-       
-        
-    </tr>
-    <div><hr></div>`;
+    <tr class="table-row">
+     <td>"${book.title}" by ${book.author}</td>
+    <td><button class="delete" type="button" id=${index}>Remove</button></td> 
+    </tr>`;
     });
     table.innerHTML = listOfBooks;
     if (this.books.length > 0) {

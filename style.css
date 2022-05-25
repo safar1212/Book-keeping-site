@@ -1,20 +1,58 @@
-body {
+/* body {
   background-color: white;
+} */
+
+#bookss {
+  /* border: 2px red solid; */
+  display: flex;
+  width: 70%;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  margin: 0 auto;
 }
 
 #dynamic {
-  border: red 0.5px solid;
+  border: black 2px solid;
+}
+
+hr {
+  width: 40%;
+  height: 2px;
+  background-color: black;
 }
 
 .table {
-  display: flex;
+  /* display: flex; */
+
+  /* border: 2px red solid; */
+  width: 100%;
 }
 
 .delete {
   margin-left: 260px;
 }
 
-.division {
-  border: red solid;
-  width: auto;
+#book-list tr:nth-child(odd) {
+  background-color: #e4e4e4;
+}
+
+#book-list td,
+#book-list th {
+  padding: 4px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+button {
+  background-color: white;
+  border-right: 4px solid black;
+  border-bottom: 4px solid black;
+}
+
+form #addItem {
+  float: right;
 }
