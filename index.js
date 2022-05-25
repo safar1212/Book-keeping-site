@@ -53,14 +53,54 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
 });
 
 
-const displayListOfBooks = () => {
-   
-}
+const list = document.querySelector('#n1');
+const addBook = document.querySelector('#n2');
+const contactUs = document.querySelector('#n3');
 
-const displayBookForm = () => {
 
-}
+list.addEventListener('click', () => {
+  document.getElementById('show-book').style.cssText = 'display: flex;';
+  document.getElementById('book-form').style.cssText = 'display: none;';
+  document.getElementById('show-contact').style.cssText = 'display: none;';
+});
 
-const displayContactPage = () => {
+addBook.addEventListener('click', () => {
+  document.getElementById('show-book').style.cssText = 'display: none;';
+  document.getElementById('book-form').style.cssText = 'display: flex;';
+  document.getElementById('show-contact').style.cssText = 'display: none;';
+});
 
-}
+contactUs.addEventListener('click', () => {
+  document.getElementById('show-book').style.cssText = 'display: none;';
+  document.getElementById('book-form').style.cssText = 'display: none;';
+  document.getElementById('show-contact').style.cssText = 'display: flex;';
+});
+
+
+
+
+
+
+
+
+
+
+// function displayListOfBooks() {
+
+// }
+
+// const displayBookForm = () => {
+//   var elem = document.getElementById("book");
+//    elem.classList.add("remove-page");
+//   document.getElementByClassName('book-section').style.cssText = ' display: none;';
+//   document.getElementById('book-form').style.cssText = 'display: flex;';
+//   document.getElementByClassName('contact-us').style.cssText = 'display: none;';
+// }
+
+// const displayContactPage = () => {
+//   var elem = document.getElementByClassName("contact-us");
+//    elem.classList.add("remove-page");
+//   document.getElementByClassName('book-section').style.cssText = ' display: none;';
+//   document.getElementById('book-form').style.cssText = 'display: none;';
+//   document.getElementByClassName('contact-us').style.cssText = 'display: flex;';
+// }

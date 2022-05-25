@@ -53,8 +53,11 @@ button {
   border-bottom: 4px solid black;
 }
 
-form #addItem {
+form button {
   float: right;
+  width: 100px;
+  height: 40px;
+  font-size: 25px;
 }
 
 section h1{
@@ -73,6 +76,7 @@ nav #navigation{
   padding-left: 3%;
   padding-right: 3%;
   height: 50px;
+  margin-bottom: 150px;
 }
 
 nav ul{
@@ -102,8 +106,7 @@ nav ul li a:hover{
   color: blue;
 }
 
-.contact-us{
-  border: 2px red solid;
+#show-contact{
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -127,12 +130,29 @@ footer{
 }
 
 #book-form{
-  border: 2px green solid;
+  font-size: 25px;
   display: none;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
 }
 
-section .books-section{
-  border: 2px yellow solid;
-  display: none;
+#book-form input {
+  width: 500px;
+  height: 25px;
+  border: 2px black solid;
+}
+
+section #show-book{
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-content: center;
+  /* display: none; */
+}
+
+.remove-page{
+  display: flex;
 }
 

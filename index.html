@@ -15,18 +15,18 @@
             </div>
             <div>
                 <ul>
-                    <li><a onclick="displayListOfBooks()" href="#">List</a></li>
+                    <li><a id="n1" href="#">List</a></li>
                     <li><hr></li>
-                    <li><a onclick="displayBookForm()" href="#">Add Book</a></li>
+                    <li><a id="n2"  href="#">Add Book</a></li>
                     <li><hr></li>
-                    <li><a onclick="displayContactPage()" href="#">Contact</a></li>
+                    <li><a id="n3"  href="#">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <section id="bookss">
      
-     <div class="books-section">
+     <div id="show-book">
         <h1>All Awesome books</h1>
         <div id = "dynamic">
             <table class="table" id="book-list">
@@ -45,7 +45,7 @@
             <button id="addItem" type= "submit">add</button>
           </form>
         </div>
-        <div class="contact-us">
+        <div id="show-contact">
             <h2>Contact Information</h2>
             <div>
                 <p>If you have any sort of questions, Or want to share your valuable comments, Fell free to reach us at!</p>
