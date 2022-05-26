@@ -2,8 +2,9 @@
 
 > This project is about building a book keeping website. Where folks can store their favortie book names. And can also delete those, whenever, needed.
 
-## Live demo If any
+## Live demo
 
+The website was build using Github Pages: [Live Version](https://safar1212.github.io/Book-keeping-site/)
 
 ## Built With
 
